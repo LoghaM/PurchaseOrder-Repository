@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "PURCHASE ORDER";
+}
+<div >
+    <ul >
+        <li >
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="viewOrder" class="nav-link text-dark"> VIEW </a>
+        </li>
+        <li>
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="createOrder" class="nav-link text-dark"> CREATE </a>
+        </li>
+        <li >
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="readOrder" class="nav-link text-dark"> READ </a>
+        </li>
+        <li >
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="updateOrder" class="nav-link text-dark"> UPDATE </a>
+        </li>
+        <li >
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="deleteOrder" class="nav-link text-dark"> DELETE </a>
+        </li>
+        <li>
+            <a asp-area="" asp-controller="Login" asp-action="Logout" class="nav-link text-dark"> LOGOUT </a>
+        </li>
+    </ul>
+</div>
+
+

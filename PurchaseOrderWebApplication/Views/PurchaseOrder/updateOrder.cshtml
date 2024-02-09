@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model PurchaseOrderWebApplication.Models.PurchaseOrder
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <h3><b>Update - Purchase Detail</b></h3>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="Index">Index</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="viewOrder">View</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="createOrder">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="readOrder">Read</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="deleteOrder">Delete</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<hr />
+<div>
+    <form asp-action="updateOrderAmount">
+    <div class="form-group">
+            <h4> Update Total Amount  : </h4>
+            <input type="submit" value="Update Table" class="button-link" />
+    </div><br /> 
+</form>
+</div>
+<hr />
+<div>
+    <form asp-action="updateOrderAddress">
+        <div class="form-group">
+            <h4> Update Purchase TO Address  : </h4>
+            <label asp-for="PurchaseId" class="control-label"></label>
+            <input asp-for="PurchaseId" class="form-control" />
+            <span asp-validation-for="PurchaseId" class="text-danger"></span>
+        </div><br />
+        <input type="submit" value="Update Row" class="button-link" />
+    </form>
+</div>

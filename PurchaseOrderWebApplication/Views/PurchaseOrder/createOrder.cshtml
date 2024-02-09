@@ -1,0 +1,82 @@
+﻿@model PurchaseOrderWebApplication.Models.PurchaseOrder
+
+@{
+    ViewData["Title"] = "createOrder";
+}
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <h3><b>Create - Purchase Detail</b></h3>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="Index">Index</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="viewOrder">View</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="readOrder">Read</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="updateOrder">Update</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="deleteOrder">Delete</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<hr />
+<h4>Purchase Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="createOrder">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="PurchaseFromLocation" class="control-label"></label>
+                <input asp-for="PurchaseFromLocation" class="form-control" />
+                <span asp-validation-for="PurchaseFromLocation" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="PurchaseDate" class="control-label"></label>
+                <input asp-for="PurchaseDate" class="form-control" />
+                <span asp-validation-for="PurchaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipmentCost" class="control-label"></label>
+                <input asp-for="ShipmentCost" class="form-control" />
+                <span asp-validation-for="ShipmentCost" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="OrderId" class="control-label"></label>
+                <input asp-for="OrderId" class="form-control" />
+                <span asp-validation-for="OrderId" class="text-danger"></span>
+            </div><br/>
+            <div class="form-group">
+                <input type="submit" value="Create" class="button-link" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<h4>
+    @ViewBag.PurchaseFromLocation <br />
+    @ViewBag.PurchaseDate <br />
+    @ViewBag.ShipmentCost <br />
+    @ViewBag.OrderId <br />
+</h4>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model PurchaseOrderWebApplication.Models.LoginUser
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Logout</h1>
+
+<h4>Logout User</h4>
+<hr />
+<form asp-controller="Login" asp-action="Logout">
+    <label for="username">Are you sure you want to logout ?</label>
+    
+    <br />
+    <input type="Submit" value="Logout" />
+    <h6>@ViewBag.ErrorMessage</h6>
+</form>
