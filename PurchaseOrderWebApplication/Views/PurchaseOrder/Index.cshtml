@@ -7,22 +7,47 @@
 <div >
     <ul >
         <li >
-            <a asp-area="" asp-controller="PurchaseOrder" asp-action="viewOrder" class="nav-link text-dark"> VIEW </a>
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="viewOrder" class="nav-link text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-spreadsheet-fill" viewBox="0 0 16 16">
+                    <path d="M12 0H4a2 2 0 0 0-2 2v4h12V2a2 2 0 0 0-2-2m2 7h-4v2h4zm0 3h-4v2h4zm0 3h-4v3h2a2 2 0 0 0 2-2zm-5 3v-3H6v3zm-4 0v-3H2v1a2 2 0 0 0 2 2zm-3-4h3v-2H2zm0-3h3V7H2zm4 0V7h3v2zm0 1h3v2H6z" />
+                </svg> VIEW
+            </a>
         </li>
         <li>
-            <a asp-area="" asp-controller="PurchaseOrder" asp-action="createOrder" class="nav-link text-dark"> CREATE </a>
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="createOrder" class="nav-link text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0" />
+                </svg> CREATE
+            </a>
         </li>
         <li >
-            <a asp-area="" asp-controller="PurchaseOrder" asp-action="readOrder" class="nav-link text-dark"> READ </a>
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="readOrder" class="nav-link text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5z" />
+                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1z" />
+                </svg> READ
+            </a>
         </li>
         <li >
-            <a asp-area="" asp-controller="PurchaseOrder" asp-action="updateOrder" class="nav-link text-dark"> UPDATE </a>
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="updateOrder" class="nav-link text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-arrow-up-fill" viewBox="0 0 16 16">
+                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6.354 9.854a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 8.707V12.5a.5.5 0 0 1-1 0V8.707z" />
+                </svg> UPDATE
+            </a>
         </li>
         <li >
-            <a asp-area="" asp-controller="PurchaseOrder" asp-action="deleteOrder" class="nav-link text-dark"> DELETE </a>
+            <a asp-area="" asp-controller="PurchaseOrder" asp-action="deleteOrder" class="nav-link text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-dash-fill" viewBox="0 0 16 16">
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M6.5 7h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1 0-1" />
+                </svg> DELETE
+            </a>
         </li>
         <li>
-            <a asp-area="" asp-controller="Login" asp-action="Logout" class="nav-link text-dark"> LOGOUT </a>
+            <a asp-area="" asp-controller="Login" asp-action="Logout" class="nav-link text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+                    <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                </svg> LOGOUT
+            </a>
         </li>
     </ul>
 </div>

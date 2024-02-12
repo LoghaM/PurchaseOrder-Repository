@@ -6,14 +6,17 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>Logout</h1>
+<h2>
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+        <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+    </svg> Logout
+</h2>
 
-<h4>Logout User</h4>
 <hr />
 <form asp-controller="Login" asp-action="Logout">
-    <h4>
+    <h5>
     <label for="username">Are you sure you want to logout ?</label>
-    </h4>
+    </h5>
     <br/>
     <br />
     <input type="Submit" value="Logout" class="button-link" />
