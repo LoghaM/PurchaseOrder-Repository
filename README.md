@@ -6,7 +6,7 @@
 **SQL operations** : View, Insert, Read, Update, Delete <br>
 
 ## System Design
-**### 1. Login Page** <br>
+### **1. Login Page** <br>
    ![login_page](/assets/images/login_page.png) <br>
    
 **### 2. Index Page** <br>
