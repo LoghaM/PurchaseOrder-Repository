@@ -41,7 +41,7 @@ namespace PurchaseOrderWebApplication.Controllers
                         //return await Task.Run(() => View());
                     }
                     // put authentication code here. 
-                    var claims = new List<Claim> { new Claim(ClaimTypes.Name, loginUser.username), };
+                    var claims = new List<Claim> { new Claim(ClaimTypes.Name, value: loginUser.username), };
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     var authProperties = new AuthenticationProperties { };
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
