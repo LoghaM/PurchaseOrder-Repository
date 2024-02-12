@@ -1,31 +1,39 @@
 # PurchaseOrder-Repository
- *Asp.net web application - MVC*
+ *ASP.NET MVC - Web Application*
 
 **Table Name** : PurchaseOrder <br>
 **Table Attributes** : PurchaseId, PurchaseFromLocation, PurchaseToLocation, PurchaseDate, ShipmentCost, TotalAmount <br>
 **SQL operations** : View, Insert, Read, Update, Delete <br>
+
+**ASP.NET MVC - Features & Filters** : Validation, Route, Authorization, Action, Cache  
+**ASP.NET MVC - UI** : Bootstrap, CSS, HTML <br>
 
 ## System Design
 ### **1. Login Page** <br>
    ![login_page](/assets/images/login_page.png) <br>
    
 ### **2. Index Page** <br>
-   ![login_page](/assets/images/index_page.png) <br>
+   ![index_page](/assets/images/index_page.png) <br>
    
 ### **3. View Table Page** <br>
-   ![login_page](/assets/images/view_table_page.png) <br>
+   ![login_page](/assets/images/view_page.png) <br>
    
 ### **4. Insert Row Page** <br>
-   ![login_page](/assets/images/create_row_page.png) <br>
+   ![view_page](/assets/images/create_page.png) <br>
    
 ### **5. Read Row Page** <br>
-   ![login_page](/assets/images/read_row_page.png) <br>
+   ![read_page](/assets/images/read_page.png) <br>
    
 ### **6. Update Table/Row Page** <br>
-   ![login_page](/assets/images/update_row_table_page.png) <br>
+   ![update_page](/assets/images/update_page.png) <br>
    
 ### **7. Delete Row Page**<br>
-   ![login_page](/assets/images/delete_row_page.png) <br>
+   ![delete_page](/assets/images/delete_page.png) <br>
    
 ### **8. Logout Page** <br>
-   ![login_page](/assets/images/logout_page.png) <br>
+   ![logout_page](/assets/images/logout_page.png) <br>
+ 
+## Working <br>
+A web app using ASP.NET, which helps communicate with SQL Server and execute SQL commands. 
+The app follows the Model-View-Controller pattern, with different controllers performing actions like insert, update, delete, and select.
+And features like login and logout, caching and validation attributes. Also used the Route attribute in all actionresults.
