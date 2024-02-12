@@ -156,7 +156,7 @@ namespace PurchaseOrderWebApplication.Controllers
         }
         [HttpPost]
         [Route("Delete")]
-        public async Task<IActionResult> deleteOrder(PurchaseOrder orders)
+        public async Task<IActionResult> deleteOrder(DeletePurchaseOrder orders)
         {
 
             int PurshaseId = orders.PurchaseId;
