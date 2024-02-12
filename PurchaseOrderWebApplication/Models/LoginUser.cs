@@ -5,6 +5,7 @@ namespace PurchaseOrderWebApplication.Models
     public class LoginUser
     {
         [Required]
+        [StringLength(20)]
         public string? username { get; set; }
         [Required]
         public string? passwd { get; set; }

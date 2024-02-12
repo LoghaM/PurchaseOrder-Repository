@@ -5,11 +5,14 @@ namespace PurchaseOrderWebApplication.Models
     public class PurchaseOrder
     {
         [Required]
+        [Range(1, 100)]
         public int PurchaseId { get; set; }
         [Required]
+        [StringLength(100)]
         public string? PurchaseFromLocation { get; set; }
         public string? PurchaseToLocation { get; set; }
         [Required]
+        [DataType(DataType.Date)]
         public DateTime PurchaseDate { get; set; }
         [Required]
         public decimal ShipmentCost { get; set; }
