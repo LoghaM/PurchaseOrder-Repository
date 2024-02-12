@@ -23,11 +23,20 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-color: darkgray;
     justify-content: center;
     align-items: center;
+    background-color: #89d5e3;
 }
-
+.bg-image{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.2;
+}
 .table-wrapper {
     width: 100%;
     overflow-x: auto;
@@ -167,7 +176,7 @@ a {
 }
 
     .button-link:hover {
-        background-color: darkgrey;
+        background-color: #7acfe3
     }
 
 dt, dd {
@@ -181,7 +190,7 @@ ul {
 }
 
 li {
-    border: 1px solid #ccc;
+    border: 1px solid #ffef65;
     text-align: center;
     margin: 5px 0;
     padding: 8px 16px;
@@ -200,7 +209,7 @@ li {
     }
 
     li {
-        border: 1px solid #ccc;
+        border: 1px solid #ffef65;
         text-align: center;
         display: block;
         margin: 10px 0;
