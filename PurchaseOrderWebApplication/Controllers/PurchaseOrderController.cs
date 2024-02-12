@@ -87,7 +87,7 @@ namespace PurchaseOrderWebApplication.Controllers
         }
         [HttpPost]
         [Route("Read")]
-        public IActionResult readOrder(PurchaseOrder orders)
+        public IActionResult readOrder(ReadPurchaseOrder orders)
         {
             return RedirectToAction("readOrderDetails", new { PurshaseId = Convert.ToInt32(orders.PurchaseId) });
         }
