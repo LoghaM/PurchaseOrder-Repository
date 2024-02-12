@@ -129,7 +129,7 @@ namespace PurchaseOrderWebApplication.Controllers
             ViewData["Message"] = "Purchase order - Total Amount updated";
             return await Task.Run(() => RedirectToAction("viewOrder"));
         }
-        public async Task<IActionResult> updateOrderAddress(PurchaseOrder orders)
+        public async Task<IActionResult> updateOrderAddress(UpdatePurchaseOrder orders)
         {
 
             int PurshaseId = orders.PurchaseId;
