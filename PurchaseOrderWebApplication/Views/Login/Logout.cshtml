@@ -11,8 +11,10 @@
 <h4>Logout User</h4>
 <hr />
 <form asp-controller="Login" asp-action="Logout">
+    <h4>
     <label for="username">Are you sure you want to logout ?</label>
-    
+    </h4>
+    <br/>
     <br />
     <input type="Submit" value="Logout" class="button-link" />
     <h6>@ViewBag.ErrorMessage</h6>

@@ -8,7 +8,7 @@ namespace PurchaseOrderWebApplication.Models
         [Range(1, 100)]
         public int PurchaseId { get; set; }
         [Required]
-        [StringLength(100)]
+        [StringLength(20)]
         public string? PurchaseFromLocation { get; set; }
         public string? PurchaseToLocation { get; set; }
         [Required]
