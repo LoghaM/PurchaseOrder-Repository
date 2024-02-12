@@ -51,18 +51,12 @@ namespace PurchaseOrderWebApplication.Controllers
         }
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> createOrder(PurchaseOrder order)
+        public async Task<IActionResult> createOrder(CreatePurchaseOrder order)
         {
             string? From = order.PurchaseFromLocation ;
-            //DateTime Date =order.PurchaseDate;
             DateTime orderDate = order.PurchaseDate;
             decimal cost= order.ShipmentCost;
             int orderId= order.OrderId;
-
-            /*string orderDate2 = Convert.ToString(Date);
-            string[] orderDate1 = new string[2];
-            orderDate1 = orderDate2.Split(" ");
-            string orderDate = orderDate1[0];*/
 
             var insertRow = "InsertPurchaseOrder";
             var param = new { PurchaseFromLocation = From,  PurchaseDate = orderDate, ShipmentCost = cost, OrderId = orderId };
