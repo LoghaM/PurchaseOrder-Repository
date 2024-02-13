@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using PurchaseOrderWebApplication.Filters;
 using PurchaseOrderWebApplication.Models;
 using System.Diagnostics;
 
@@ -24,6 +25,12 @@ namespace PurchaseOrderWebApplication.Controllers
                 throw;
             }
         }
+        [HttpGet]
+        [ServiceFilter(typeof(ExceptionFilter))] 
+        public IActionResult Get()
+        {
+            throw new Exception("Exception in HomeController.");
+        }
         public IActionResult Index()
         {
             return View();
@@ -37,7 +44,8 @@ namespace PurchaseOrderWebApplication.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
         }
+        
     }
 }

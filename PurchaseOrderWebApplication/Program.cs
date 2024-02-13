@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using PurchaseOrderWebApplication.Filters;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add Exception Filter
+builder.Services.AddScoped<ExceptionFilter>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

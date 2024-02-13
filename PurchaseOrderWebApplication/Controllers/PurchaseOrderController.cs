@@ -11,12 +11,13 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.AspNetCore.Authorization;
+using PurchaseOrderWebApplication.Filters;
 
 namespace PurchaseOrderWebApplication.Controllers
 {
     public class PurchaseOrderController : Controller
     {
-        string connectionString = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;Connection Timeout=10;";
+        string connectionString = "Server=192.168.0.23,1427 ;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;Connection Timeout=10;";
         List<PurchaseOrder> PurchaseList = new List<PurchaseOrder>();
 
         [HttpGet]
@@ -125,6 +126,7 @@ namespace PurchaseOrderWebApplication.Controllers
                 var PurchaseList = await connection.ExecuteAsync(updateTable, commandType: CommandType.StoredProcedure);
             }
             Console.WriteLine("Update Purchase amount Completed..");
+            Console.WriteLine();
 
             ViewData["Message"] = "Purchase order - Total Amount updated";
             return await Task.Run(() => RedirectToAction("viewOrder"));
@@ -141,6 +143,7 @@ namespace PurchaseOrderWebApplication.Controllers
                 var PurchaseList = await connection.ExecuteAsync(updateRow, param, commandType: CommandType.StoredProcedure);
             }
             Console.WriteLine("Update operation Completed..");
+            Console.WriteLine();
 
             ViewData["Message"] = "Purchase Id : " + PurshaseId + "'s - Purchase TO Address updated";
             return await Task.Run(() => RedirectToAction("viewOrder"));
@@ -181,6 +184,11 @@ namespace PurchaseOrderWebApplication.Controllers
             return View();
         }
 
-
+        [HttpGet]
+        [ServiceFilter(typeof(ExceptionFilter))] 
+        public IActionResult Get()
+        {
+            throw new Exception("Exception in Controller.");
+        }
     }
 }
