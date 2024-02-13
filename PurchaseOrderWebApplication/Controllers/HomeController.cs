@@ -12,7 +12,18 @@ namespace PurchaseOrderWebApplication.Controllers
         {
             _logger = logger;
         }
-
+        public void OnGet()
+        {
+            try
+            {
+                _logger.LogInformation("Test log");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(message: ex.Message, ex);
+                throw;
+            }
+        }
         public IActionResult Index()
         {
             return View();
