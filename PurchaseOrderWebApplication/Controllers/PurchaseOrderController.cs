@@ -70,10 +70,7 @@ namespace PurchaseOrderWebApplication.Controllers
                 Console.WriteLine("Insert operation Completed..");
                 Console.WriteLine();
 
-                ViewBag.PurchaseFromLocation = "Purchase From : " + From;
-                ViewBag.PurchaseDate = "Purchase Date : " + orderDate;
-                ViewBag.ShipmentCost = "Shipment Cost : " + cost;
-                ViewBag.OrderId = "Order Id : " + orderId;
+                ViewBag.PurchaseFromLocation ="Created Successfully ! ";
             }
             catch(Exception ex)
             {

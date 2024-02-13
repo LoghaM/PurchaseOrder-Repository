@@ -58,18 +58,18 @@ th,
 td {
     padding: 8px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid white;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 tbody tr:hover {
-    background-color: #f5f5f5;
+    background-color: #ffc107;
 }
 
 th {
-    background-color: #f5f5f5;
+    background-color: #ffc107;
     color: black;
 }
 
@@ -80,7 +80,7 @@ th {
 }
 
 td.fixed-column {
-    background-color: #fff;
+    background-color: #ffc107;
 }
 @media screen and (max-width: 768px) {
     table {
@@ -95,7 +95,7 @@ td.fixed-column {
         display: block;
         margin-bottom: 40px;
         border-radius: 5px;
-        border: 1px solid #ddd;
+        border: 1px solid white;
         top: 110px;
     }
 
@@ -106,17 +106,16 @@ td.fixed-column {
             position: relative;
             white-space: pre-wrap;
             border: none;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid white;
             text-align: end;
         }
             tr td:nth-child(1) {
-                
                 color: BLACK;
                 padding: 8px;
                 border-radius: 5px 5px 0 0;
                 content: attr(name);
                 font-weight: bold;
-                background-color: #fff;
+                background-color: #ffc107;
             }
 
             tr td:not(:nth-child(0))::before {
@@ -153,7 +152,7 @@ td.fixed-column {
 }
 
     .nav-link:hover {
-        background-color: #f2f2f2;
+        background-color: #ffc107;
     }
 
 a {
@@ -162,9 +161,10 @@ a {
     display: block;
 }
 
-    a:hover {
-        background-color: #f2f2f2;
-    }
+   /* a:hover {
+        border-radius: 15px;
+        background-color: white;
+    }*/
 .button-link {
     display: inline-block;
     padding: 10px 15px;
@@ -176,7 +176,7 @@ a {
 }
 
     .button-link:hover {
-        background-color: #7acfe3
+        background-color: #ffc107
     }
 
 dt, dd {
@@ -190,9 +190,9 @@ ul {
 }
 
 li {
-    border: 1px solid #ffef65;
+    border: 1px solid white;
     text-align: center;
-    margin: 5px 0;
+    margin: 15px 0;
     padding: 8px 16px;
     transition: all 0.3s;
     transform-style: preserve-3d;
@@ -209,7 +209,7 @@ li {
     }
 
     li {
-        border: 1px solid #ffef65;
+        border: 1px solid white;
         text-align: center;
         display: block;
         margin: 10px 0;

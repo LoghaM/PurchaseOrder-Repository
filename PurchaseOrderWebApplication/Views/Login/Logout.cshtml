@@ -8,20 +8,30 @@
 <body>
     <img class="bg-image bg-transparent" src="~/lib/bg/ecommerce5.jpg" />
 
-<h2>
-    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
-        <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-    </svg> Logout
-</h2>
+    <form asp-controller="Login" asp-action="Logout">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-warning text-black" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
 
-<hr />
-<form asp-controller="Login" asp-action="Logout">
-    <h5>
-    <label for="username">Are you sure you want to logout ?</label>
-    </h5>
-    <br/>
-    <br />
-    <input type="Submit" value="Logout" class="button-link" />
-    <h6>@ViewBag.ErrorMessage</h6>
-</form>
+                            <div class="mb-md-5 mt-md-4 pb-5">
+                                <h2 class="fw-bold mb-2 text-uppercase">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+                                        <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                                    </svg> Logout
+                                </h2>
+                                <p class="text-black-50 mb-5">Are you sure you want to logout ?</p>
+
+                                <button class="btn btn-outline-dark btn-lg px-5" type="submit">Logout</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
     </body>
