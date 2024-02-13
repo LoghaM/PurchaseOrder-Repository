@@ -5,7 +5,7 @@
 **Table Attributes** : PurchaseId, PurchaseFromLocation, PurchaseToLocation, PurchaseDate, ShipmentCost, TotalAmount <br>
 **SQL operations** : View, Insert, Read, Update, Delete <br>
 
-**ASP.NET MVC - Features & Filters** : Validation, Route, Authorization, Action, Cache  
+**ASP.NET MVC - Features & Filters** : Validation, Route, Serilog, Authorization, Action, Cache, Exception 
 **ASP.NET MVC - UI** : Bootstrap, CSS, HTML <br>
 
 ## System Design
