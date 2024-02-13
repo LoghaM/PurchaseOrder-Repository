@@ -13,9 +13,6 @@ try
 
     // Add Exception Filter
     builder.Services.AddScoped<ExceptionFilter>();
-    //Add support to logging with SERILOG
-    builder.Host.UseSerilog((context, configuration) =>
-        configuration.ReadFrom.Configuration(context.Configuration));
     // Add services to the container.
     builder.Services.AddControllersWithViews();
 
@@ -26,7 +23,9 @@ try
     });
     builder.Services.AddAuthentication();
     builder.Services.AddRazorPages();
-    
+    //Add support to logging with SERILOG
+    builder.Host.UseSerilog((context, configuration) =>
+        configuration.ReadFrom.Configuration(context.Configuration));
 
     var app = builder.Build();
 
@@ -40,10 +39,8 @@ try
 
     app.UseHttpsRedirection();
     app.UseStaticFiles();
-    app.UseExceptionHandleMiddleware();
     //Add support to logging request with SERILOG
     app.UseSerilogRequestLogging();
-    
     app.UseRouting();
 
     app.UseAuthorization();
