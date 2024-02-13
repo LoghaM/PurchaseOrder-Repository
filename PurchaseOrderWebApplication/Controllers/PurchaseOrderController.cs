@@ -54,27 +54,32 @@ namespace PurchaseOrderWebApplication.Controllers
         [Route("Create")]
         public async Task<IActionResult> createOrder(CreatePurchaseOrder order)
         {
-            string? From = order.PurchaseFromLocation ;
+            string? From = order.PurchaseFromLocation;
             DateTime orderDate = order.PurchaseDate;
-            decimal cost= order.ShipmentCost;
-            int orderId= order.OrderId;
-
-            var insertRow = "InsertPurchaseOrder";
-            var param = new { PurchaseFromLocation = From,  PurchaseDate = orderDate, ShipmentCost = cost, OrderId = orderId };
-
-            using (IDbConnection connection = new SqlConnection(connectionString))
+            decimal cost = order.ShipmentCost;
+            int orderId = order.OrderId;
+            try
             {
-                var PurchaseObject = await connection.ExecuteAsync(insertRow, param, commandType: CommandType.StoredProcedure);
-            }
-            Console.WriteLine("Insert operation Completed..");
-            Console.WriteLine();
-            
-            
-            ViewBag.PurchaseFromLocation = "Purchase From : " + From;
-            ViewBag.PurchaseDate = "Purchase Date : " + orderDate;
-            ViewBag.ShipmentCost = "Shipment Cost : " + cost;
-            ViewBag.OrderId = "Order Id : " + orderId;
+                var insertRow = "InsertPurchaseOrder";
+                var param = new { PurchaseFromLocation = From, PurchaseDate = orderDate, ShipmentCost = cost, OrderId = orderId };
 
+                using (IDbConnection connection = new SqlConnection(connectionString))
+                {
+                    var PurchaseObject = await connection.ExecuteAsync(insertRow, param, commandType: CommandType.StoredProcedure);
+                }
+                Console.WriteLine("Insert operation Completed..");
+                Console.WriteLine();
+
+                ViewBag.PurchaseFromLocation = "Purchase From : " + From;
+                ViewBag.PurchaseDate = "Purchase Date : " + orderDate;
+                ViewBag.ShipmentCost = "Shipment Cost : " + cost;
+                ViewBag.OrderId = "Order Id : " + orderId;
+            }
+            catch(Exception ex)
+            {
+                ViewBag.PurchaseFromLocation = "Insertion invalid...";
+                Console.WriteLine(ex.Message); 
+            }
             return await Task.Run(() => View());
         }
 
@@ -96,6 +101,7 @@ namespace PurchaseOrderWebApplication.Controllers
         [Route("ReadId/{PurshaseId}")]
         public async Task<IActionResult> readOrderDetails(int PurshaseId)
         {
+           
             PurchaseOrder Purchase;
             Console.WriteLine("Select operation Completed...");
             Console.WriteLine();
