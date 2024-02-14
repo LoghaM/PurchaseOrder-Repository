@@ -10,7 +10,7 @@
 
 ## System Design
 ### **1. Login Page** <br>
-   ![login_page](/assets/images/login_page.png) <br>
+   ![login_page](/assets/images/login_page.png) ![login_page](/assets/images/login_page1.png)  <br>
    
 ### **2. Index Page** <br>
    ![index_page](/assets/images/index_page.png) <br>
