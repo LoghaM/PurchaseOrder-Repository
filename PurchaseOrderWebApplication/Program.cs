@@ -44,6 +44,8 @@ try
 
     app.UseAuthorization();
 
+    app.UseMiddleware<Middleware>();
+
     app.MapControllerRoute(
         name: "default",
         pattern: "{controller=PurchaseOrder}/{action=Index}");
