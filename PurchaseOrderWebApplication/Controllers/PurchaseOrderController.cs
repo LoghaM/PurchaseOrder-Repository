@@ -70,7 +70,7 @@ namespace PurchaseOrderWebApplication.Controllers
                 Console.WriteLine("Insert operation Completed..");
                 Console.WriteLine();
 
-                ViewBag.PurchaseFromLocation ="Created Successfully ! ";
+                ViewData["Message"]  = "Created Successfully ! ";
             }
             catch(Exception ex)
             {
