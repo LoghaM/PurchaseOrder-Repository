@@ -10,28 +10,28 @@
 
 ## System Design
 ### **1. Login Page** <br>
-   ![login_page](/assets/images/login_page.png) ![login_page](/assets/images/login_page1.png)  <br>
+   ![login_page](/assets/images/login_page1.png)  <br>
    
 ### **2. Index Page** <br>
-   ![index_page](/assets/images/index_page.png) <br>
+   ![index_page](/assets/images/index_page1.png) <br>
    
 ### **3. View Table Page** <br>
-   ![login_page](/assets/images/view_page.png) <br>
+   ![login_page](/assets/images/view_page1.png) <br>
    
 ### **4. Insert Row Page** <br>
-   ![view_page](/assets/images/create_page.png) <br>
+   ![view_page](/assets/images/create_page1.png) <br>
    
 ### **5. Read Row Page** <br>
-   ![read_page](/assets/images/read_page.png) <br>
+   ![read_page](/assets/images/read_page1.png) <br>
    
 ### **6. Update Table/Row Page** <br>
-   ![update_page](/assets/images/update_page.png) <br>
+   ![update_page](/assets/images/update_page1.png) <br>
    
 ### **7. Delete Row Page**<br>
-   ![delete_page](/assets/images/delete_page.png) <br>
+   ![delete_page](/assets/images/delete_page1.png) <br>
    
 ### **8. Logout Page** <br>
-   ![logout_page](/assets/images/logout_page.png) <br>
+   ![logout_page](/assets/images/logout_page1.png) <br>
  
 ## Working <br>
 A web app using ASP.NET, which helps communicate with SQL Server and execute SQL commands. 
