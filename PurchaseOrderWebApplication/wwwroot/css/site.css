@@ -85,18 +85,26 @@ td.fixed-column {
 @media screen and (max-width: 768px) {
     table {
         width: 350px;
+        align-content: center;
     }
-
+    div{
+        justify-content:center;
+    }
     thead {
-        display:none;
+        display: none;
+        align-content: center;
     }
-
+    tbody {
+        align-content: center;
+    }
     tr {
         display: block;
         margin-bottom: 40px;
         border-radius: 5px;
         border: 1px solid white;
         top: 110px;
+        align-content:center;
+       
     }
 
         tr td {
@@ -190,7 +198,7 @@ ul {
 }
 
 li {
-    border: 1px solid white;
+    border: 1px solid;
     text-align: center;
     margin: 15px 0;
     padding: 8px 16px;
@@ -209,7 +217,7 @@ li {
     }
 
     li {
-        border: 1px solid white;
+        border: 1px solid;
         text-align: center;
         display: block;
         margin: 10px 0;

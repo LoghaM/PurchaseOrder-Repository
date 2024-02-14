@@ -1,6 +1,9 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@{
+    ViewData["Title"] = "updateOrder";
+}
 @model PurchaseOrderWebApplication.Models.UpdatePurchaseOrder
 <body>
     <img class="bg-image bg-transparent" src="~/lib/bg/ecommerce6.jpg" />
@@ -38,27 +41,65 @@
         </div>
     </div>
 </nav>
-<hr />
 <div>
-    <form asp-action="updateOrderAmount">
-    <div class="form-group">
-            <h4> Update Total Amount  : </h4>
-            <input type="submit" value="Update Table" class="button-link" />
-    </div><br /> 
-</form>
-</div>
-<hr />
-<div>
+        <form asp-action="updateOrderAmount">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="container pt-4 h-50">
+                <div class="row d-flex justify-content-center align-items-center h-50">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-info text-black" style="border-radius: 1rem;">
+                            <div class="card-body p-5 text-center">
+
+                                <div class="mb-md-1 mt-md-1 pb-1">
+                                    <h4 class="fw-bold mb-2 text-uppercase">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-arrow-up-fill" viewBox="0 0 16 16">
+                                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6.354 9.854a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 8.707V12.5a.5.5 0 0 1-1 0V8.707z" />
+                                        </svg>  Update Total Amount
+                                    </h4>
+                                    <p class="text-black-50 mb-3">Update table's Total Amount!</p>
+                                    <button class="btn btn-outline-dark btn-lg px-5" type="submit">Update Table</button>
+                                    <br />
+                                    <p class="text-black-50 mb-1">@ViewBag.PurchaseFromLocation </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     <form asp-action="updateOrderAddress">
-        <div class="form-group">
-            <h4> Update Purchase TO Address  : </h4>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-            </svg><label asp-for="PurchaseId" class="control-label"></label>
-            <input asp-for="PurchaseId" class="form-control" />
-            <span asp-validation-for="PurchaseId" class="text-danger"></span>
-        </div><br />
-        <input type="submit" value="Update Row" class="button-link" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-info text-black" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-1 mt-md-1 pb-1">
+                                <h4 class="fw-bold mb-2 text-uppercase">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-arrow-up-fill" viewBox="0 0 16 16">
+                                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6.354 9.854a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 8.707V12.5a.5.5 0 0 1-1 0V8.707z" />
+                                        </svg>  Update Purchase TO Address
+                                </h4>
+                                <p class="text-black-50 mb-3">Please enter your purchase order Id!</p>
+
+                                <div class="form-outline form-black mb-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
+                                        </svg><label asp-for="PurchaseId" class="form-label"></label>
+                                    <input asp-for="PurchaseId" class="form-control form-control-lg" />
+                                    <span asp-validation-for="PurchaseId" class="text-danger"></span>
+                                </div>
+
+                                <button class="btn btn-outline-dark btn-lg px-5" type="submit">Update Row</button>
+                                <br />
+                                <p class="text-black-50 mb-1">@ViewBag.PurchaseFromLocation </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
-    </body>
+ </body>
