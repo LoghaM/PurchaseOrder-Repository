@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using PurchaseOrderWebApplication.Filters;
 using Serilog;
-using DependencyInjectionSample.Interfaces;
-using DependencyInjectionSample.Services;
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .CreateLogger();
