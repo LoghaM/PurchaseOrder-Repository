@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using PurchaseOrderWebApplication.Filters;
 using Serilog;
+using DependencyInjectionSample.Interfaces;
+using DependencyInjectionSample.Services;
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .CreateLogger();
@@ -25,7 +27,8 @@ try
     //Add support to logging with SERILOG
     builder.Host.UseSerilog((context, configuration) =>
         configuration.ReadFrom.Configuration(context.Configuration));
-
+    //IDependency scope added
+    builder.Services.AddScoped<IDependency, Dependency>();
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.

@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using PurchaseOrderWebApplication.Filters;
-using PurchaseOrderWebApplication.Models;
 using System.Diagnostics;
 
 namespace PurchaseOrderWebApplication.Controllers
@@ -8,16 +7,18 @@ namespace PurchaseOrderWebApplication.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IDependency _dependency;
+        public HomeController(ILogger<HomeController> logger, IDependency dependency)
         {
             _logger = logger;
+            _dependency = dependency;
         }
         public void OnGet()
         {
             try
             {
                 _logger.LogInformation("Test log");
+                _dependency.WriteMessage("Developed by Logha!");
             }
             catch (Exception ex)
             {
@@ -25,6 +26,7 @@ namespace PurchaseOrderWebApplication.Controllers
                 throw;
             }
         }
+       
         [HttpGet]
         [ServiceFilter(typeof(ExceptionFilter))] 
         public IActionResult Get()
