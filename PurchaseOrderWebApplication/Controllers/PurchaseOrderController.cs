@@ -181,10 +181,9 @@ namespace PurchaseOrderWebApplication.Controllers
 
 
         [Route("Welcome")]
-        public IActionResult Welcome(string name="logha")
+        public IActionResult Welcome()
         {
-            ViewData["Message"] =name;
-            return View();
+            return RedirectToAction("Index","Home");
         }
 
         [HttpGet]

@@ -2,9 +2,10 @@
 {
     public class Dependency : IDependency
     {
-        public void WriteMessage(string message)
+        public string WriteMessage(string message)
         {
             Console.WriteLine($"writing this message : {message}");
+            return message;
         }
     }
 }

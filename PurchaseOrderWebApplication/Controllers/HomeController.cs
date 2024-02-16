@@ -18,7 +18,6 @@ namespace PurchaseOrderWebApplication.Controllers
             try
             {
                 _logger.LogInformation("Test log");
-                _dependency.WriteMessage("Developed by Logha!");
             }
             catch (Exception ex)
             {
@@ -35,6 +34,8 @@ namespace PurchaseOrderWebApplication.Controllers
         }
         public IActionResult Index()
         {
+            string result = _dependency.WriteMessage("Developed by Logha!");
+            ViewData["Message"] = result;
             return View();
         }
 

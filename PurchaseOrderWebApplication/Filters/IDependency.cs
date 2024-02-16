@@ -2,6 +2,6 @@
 {
     public interface IDependency
     {
-        void WriteMessage(string message);
+        string WriteMessage(string message);
     }
 }

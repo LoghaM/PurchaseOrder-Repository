@@ -22,11 +22,14 @@ try
     });
     builder.Services.AddAuthentication();
     builder.Services.AddRazorPages();
+
     //Add support to logging with SERILOG
     builder.Host.UseSerilog((context, configuration) =>
         configuration.ReadFrom.Configuration(context.Configuration));
+
     //IDependency scope added
     builder.Services.AddScoped<IDependency, Dependency>();
+
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
