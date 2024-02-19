@@ -3,6 +3,50 @@
 @{
     ViewData["Title"] = "deleteOrder";
 }
+@section Scripts{
+    <script>
+        function confirmDelete(event){
+            event.preventDefault();
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: "btn btn-success",
+                    cancelButton: "btn btn-danger"
+                },
+                buttonsStyling: false
+            });
+            swalWithBootstrapButtons.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const deleteForm = document.getElementById('deleteOrder');
+                    deleteForm.submit();
+                    swalWithBootstrapButtons.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                    });
+                } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        icon: "error"
+                    });
+                }
+            });
+
+        }
+        
+    </script>
+}
 <body>
     <img class="bg-image bg-transparent" src="~/lib/bg/ecommerce8.jpg" />
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
@@ -41,7 +85,7 @@
 </nav>
 
 <div>
-        <form asp-action="deleteOrder">
+        <form asp-action="deleteOrder" id="deleteOrder" onsubmit="confirmDelete(event)">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="container py-5 h-50">
                 <div class="row d-flex justify-content-center align-items-center h-50">
