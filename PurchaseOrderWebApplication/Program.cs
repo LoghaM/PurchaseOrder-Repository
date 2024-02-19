@@ -31,6 +31,14 @@ try
     //IDependency scope added
     builder.Services.AddScoped<IDependency, Dependency>();
 
+    //web optimizer - Minification, Bundling
+    builder.Services.AddWebOptimizer(pipeline =>
+    {
+        //pipeline.MinifyJsFiles("js/site.js", "a.js", "b.js");
+        pipeline.MinifyCssFiles("css/**/*.css");
+        pipeline.AddCssBundle("/css/bundle.css", "css/**/*.css");
+        //pipeline.AddJavaScriptBundle("/js/scripts.js", "a.js", "b.js");
+    });
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
@@ -50,6 +58,7 @@ try
     app.UseAuthorization();
 
     app.UseMiddleware<Middleware>();
+    app.UseWebOptimizer();
 
     app.MapControllerRoute(
         name: "default",
