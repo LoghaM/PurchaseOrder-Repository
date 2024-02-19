@@ -5,8 +5,8 @@
 **Table Attributes** : PurchaseId, PurchaseFromLocation, PurchaseToLocation, PurchaseDate, ShipmentCost, TotalAmount <br>
 **SQL operations** : View, Insert, Read, Update, Delete <br>
 
-**ASP.NET MVC - Features & Filters** : Custom Middleware, Dependency Injection, Validation, Route, Serilog, Authorization, Action, Cache, Exception <br>
-**ASP.NET MVC - UI** : Bootstrap, CSS, HTML <br>
+**ASP.NET MVC - Features & Filters** : Custom Middleware, Dependency Injection, AntiForgeryToken, Validation, Route, Serilog, Authorization, Action, Cache, Exception <br>
+**ASP.NET MVC - UI** : Bootstrap, CSS, HTML, SweetAlert JS <br>
 
 ## System Design
 ### **1. Login Page** <br>
