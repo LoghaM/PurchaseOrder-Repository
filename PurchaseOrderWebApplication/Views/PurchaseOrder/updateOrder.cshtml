@@ -7,7 +7,7 @@
 @model PurchaseOrderWebApplication.Models.UpdatePurchaseOrder
 @section Scripts {
     <script>
-        function confirmDelete(event) {
+        function confirmupdateOrderAmount(event) {
             event.preventDefault();
             Swal.fire({
                 title: "Do you want to update the changes?",
@@ -19,6 +19,25 @@
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                     const deleteForm = document.getElementById('updateOrderAmount');
+                    deleteForm.submit();
+                    Swal.fire("Updated!", "", "success");
+                } else if (result.isDenied) {
+                    Swal.fire("Changes are not update", "", "info");
+                }
+            });
+        }
+        function confirmupdateOrderAddress(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: "Do you want to update the changes?",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Update",
+                denyButtonText: `Don't update`
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    const deleteForm = document.getElementById('updateOrderAddress');
                     deleteForm.submit();
                     Swal.fire("Updated!", "", "success");
                 } else if (result.isDenied) {
@@ -65,7 +84,7 @@
     </div>
 </nav>
 <div>
-        <form asp-action="updateOrderAmount" id="updateOrderAmount" onsubmit="confirmDelete(event)">
+        <form asp-action="updateOrderAmount" id="updateOrderAmount" onsubmit="confirmupdateOrderAmount(event)">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="container pt-4 h-50">
                 <div class="row d-flex justify-content-center align-items-center h-50">
@@ -90,7 +109,7 @@
                 </div>
             </div>
         </form>
-    <form asp-action="updateOrderAddress">
+        <form asp-action="updateOrderAddress" id="updateOrderAddress" onsubmit="confirmupdateOrderAddress(event)">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="container py-5 h-50">
             <div class="row d-flex justify-content-center align-items-center h-50">
