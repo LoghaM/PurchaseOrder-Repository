@@ -5,6 +5,29 @@
     ViewData["Title"] = "updateOrder";
 }
 @model PurchaseOrderWebApplication.Models.UpdatePurchaseOrder
+@section Scripts {
+    <script>
+        function confirmDelete(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: "Do you want to update the changes?",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Update",
+                denyButtonText: `Don't update`
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    const deleteForm = document.getElementById('updateOrderAmount');
+                    deleteForm.submit();
+                    Swal.fire("Updated!", "", "success");
+                } else if (result.isDenied) {
+                    Swal.fire("Changes are not update", "", "info");
+                }
+            });
+        }
+    </script>
+}
 <body>
     <img class="bg-image bg-transparent" src="~/lib/bg/ecommerce6.jpg" />
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
@@ -42,7 +65,7 @@
     </div>
 </nav>
 <div>
-        <form asp-action="updateOrderAmount">
+        <form asp-action="updateOrderAmount" id="updateOrderAmount" onsubmit="confirmDelete(event)">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="container pt-4 h-50">
                 <div class="row d-flex justify-content-center align-items-center h-50">
