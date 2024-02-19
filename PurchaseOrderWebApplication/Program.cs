@@ -21,6 +21,7 @@ try
         option.ExpireTimeSpan = TimeSpan.FromMinutes(5);
     });
     builder.Services.AddAuthentication();
+    builder.Services.AddAntiforgery(options => options.HeaderName = "XSRF-TOKEN");
     builder.Services.AddRazorPages();
 
     //Add support to logging with SERILOG

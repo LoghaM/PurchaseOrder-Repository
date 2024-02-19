@@ -23,6 +23,7 @@ namespace PurchaseOrderWebApplication.Controllers
             return View(); 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginUser loginUser)
         {
             string? username = loginUser.username;
